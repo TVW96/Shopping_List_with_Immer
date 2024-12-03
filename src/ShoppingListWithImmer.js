@@ -1,6 +1,5 @@
 import { React, useState } from 'react';
 import { useImmer } from "use-immer";
-import { produce } from 'immer';
 import "./styles.sass";
 import ItemsList from "./ItemsList";
 
@@ -44,7 +43,6 @@ function ShoppingListWithImmer() {
         });
     };
 
-
     const removeItem = (id) => {
         setShoppingList((draft) => {
             return draft.filter((item) => item.id !== id);
@@ -52,7 +50,7 @@ function ShoppingListWithImmer() {
     };
 
 
-    const [curr, setCurr] = useState({});
+    const [curr, setCurr] = useState(0);
 
     const prev = (item, id) => {
         setCurr((prevCurr) => {
